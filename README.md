@@ -1,6 +1,6 @@
 # Getting started with AirFlow
 
-This repository presents getting started with docker based airflow workflow. I have added detailed discussion on this in the medium article series.
+[Just a moment...](https://medium.com/@sudarshan-pant/mlops-with-apache-airflow-part-1-running-airflow-locally-with-docker-c9890adfac32))ocker-c9890adfac32)) in the medium article series.
 
 ##### MLOps with Apache Airflow 
 - [Part 1: Running Airflow Locally with Docker](https://medium.com/@sudarshan-pant/mlops-with-apache-airflow-part-1-running-airflow-locally-with-docker-c9890adfac32)
@@ -42,3 +42,46 @@ docker compose up
  ```
 
  6. Access web ui at localhost:8080
+
+
+ This way we setup and run airflow locally. Next, lets create an example ML pipeline.
+
+  For this, we work with the cleveland dataset for heart disease dataset from Cleveland Clinic Foundation with 303 samples with 	classes Healthy(~54%) and Risk (46%). This dataset is commonly used for benchmarkin ML algorithm. In this repo, we do not focus on model performance. The goal is to build a ML pipeline for AirFlow.
+
+  7. Lets place our data in data folder. 
+  8. In Step 5 we build run from airflow image . Since we need other dependencies based on our project we will create a container for this project. Therefore add a dockerfile to the root of this project with following content and following the instruction in ```docker-compose.yaml``` uncomment the line with build command in that file.
+
+    ```
+    # In order to add custom dependencies or upgrade provider distributions you can use your extended image.
+    # Comment the image line, place your Dockerfile in the directory where you placed the docker-compose.yaml
+    # and uncomment the "build" line below, Then run `docker-compose build` to build the images.
+    #image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:3.1.5}
+    build: .
+    ```
+
+
+
+  ```dockerfile
+    FROM apache/airflow:3.1.5 
+    COPY requirements.txt . 
+    RUN pip install --no-cache-dir -r requirements.txt
+
+  ```
+
+  9. map volumes for data in ```docker-compose.yaml```
+
+  ```dockerfile
+ 
+  - ./data:/opt/airflow/data
+  
+  ```
+
+10. Then create pipeline as shown in ```heart_risk_pred_pipeline.py``` and run
+
+
+ ```bash
+  docker compose up
+
+ ```
+
+![Airflow](image.png)
