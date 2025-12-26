@@ -1,5 +1,12 @@
 # Getting started with AirFlow
 
+This repository presents getting started with docker based airflow workflow. I have added detailed discussion on this in the medium article series.
+
+##### MLOps with Apache Airflow 
+- [Part 1: Running Airflow Locally with Docker](https://medium.com/@sudarshan-pant/mlops-with-apache-airflow-part-1-running-airflow-locally-with-docker-c9890adfac32)
+- Part 2: ...
+
+
 ---
 
 1. Create a folder and create these directories ```config```, ```dags```, ```logs```, ```plugins```

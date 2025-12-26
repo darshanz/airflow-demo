@@ -1,0 +1,58 @@
+# --------------------
+# Python
+# --------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.env
+.venv/
+venv/
+
+# --------------------
+# Airflow
+# --------------------
+logs/
+airflow.db
+airflow.cfg
+webserver_config.py
+
+# --------------------
+# Docker
+# --------------------
+docker-compose.override.yml
+*.log
+
+# --------------------
+# MLflow
+# --------------------
+mlruns/
+*.db
+
+# --------------------
+# Jupyter / Notebooks
+# --------------------
+.ipynb_checkpoints/
+
+# --------------------
+# OS / Editor
+# --------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --------------------
+# Data / Artifacts (optional, adjust as needed)
+# --------------------
+data/
+output/
+artifacts/
+
+# --------------------
+# Secrets
+# --------------------
+*.env
+.env.*
