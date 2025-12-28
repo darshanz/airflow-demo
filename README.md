@@ -1,6 +1,9 @@
-# Getting started with AirFlow
+ 
+##### MLOps with Apache Airflow 
 
-[Just a moment...](https://medium.com/@sudarshan-pant/mlops-with-apache-airflow-part-1-running-airflow-locally-with-docker-c9890adfac32))ocker-c9890adfac32)) in the medium article series.
+This repository is a quick demo for running Apache Airflow locally using Docker, as part of exploring MLOps foundations. It focuses on setting up Airflow correctly, understanding DAGs and task orchestration, and building a simple end-to-end machine learning pipeline. 
+
+This repo is an example code for the following article on medium.
 
 ##### MLOps with Apache Airflow 
 - [Part 1: Running Airflow Locally with Docker](https://medium.com/@sudarshan-pant/mlops-with-apache-airflow-part-1-running-airflow-locally-with-docker-c9890adfac32)
